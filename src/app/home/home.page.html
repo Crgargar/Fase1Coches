@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Ejemplo Firestore
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-label>Marca</ion-label>
+    <ion-input [(ngModel)]="cocheEditando.marca"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Modelo</ion-label>
+    <ion-input [(ngModel)]="cocheEditando.modelo"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Anno</ion-label>
+    <ion-input [(ngModel)]="cocheEditando.anno"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Pais</ion-label>
+    <ion-input [(ngModel)]="cocheEditando.pais"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Precio</ion-label>
+    <ion-input [(ngModel)]="cocheEditando.precio"></ion-input>
+  </ion-item>
+
+  <ion-button (click)="clickBotonInsertar()">Añadir Coche</ion-button>
+
+  <h1>Lista de coches</h1>
+  <ion-list>
+    <ion-item *ngFor="let documentCoche of arrayColeccionCoches">
+      <ion-grid>
+        <ion-row>
+          <h2> {{ documentCoche.data.marca }}</h2>
+        </ion-row>
+        <ion-row>
+          <p>{{ documentCoche.data.modelo }}</p>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+</ion-content>
